@@ -1,7 +1,9 @@
-#ifndef VECTOR_H_INCLUDED
-#define VECTOR_H_INCLUDED
+#ifndef VECTOR_H
+#define VECTOR_H
 
-class Vector
+#include "abstractvector.h"
+
+class Vector: public AbstractVector
 {
     private:
         friend Vector operator -(Vector a, Vector b);
@@ -19,10 +21,10 @@ class Vector
         double get_y();
 
         double lenght();
-        virtual void show();
+        void show();
         Vector operator -();
         Vector operator *(double k);
         Vector operator +=(Vector a);
 };
 
-#endif // VECTOR_H_INCLUDED
+#endif // VECTOR_H

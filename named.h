@@ -1,7 +1,8 @@
-#ifndef NAMED_H_INCLUDED
-#define NAMED_H_INCLUDED
+#ifndef NAMED_H
+#define NAMED_H
 
 #include "vector.h"
+#include "abstractvector.h"
 
 class Named: public Vector
 {
@@ -20,4 +21,4 @@ class Named: public Vector
         char operator [](int i);
 };
 
-#endif // NAMED_H_INCLUDED
+#endif // NAMED_H

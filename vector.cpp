@@ -1,12 +1,13 @@
+#include <iostream>
 #include <cmath>
 #include "vector.h"
-#include <iostream>
+
 using namespace std;
 
 Vector::Vector()
 {
-    set_x(double());
-    set_y(double());
+    set_x(0);
+    set_y(0);
 }
 
 Vector::Vector(double x, double y)
@@ -47,6 +48,7 @@ void Vector::show()
     cout << "x = " << _x << "; y = " << _y << endl;
 }
 
+
 Vector Vector::operator -()
 {
     return Vector(-_x, -_y);
@@ -67,3 +69,4 @@ Vector Vector::operator +=(Vector a)
     _x += a.get_x();
     _y += a.get_y();
 }
+

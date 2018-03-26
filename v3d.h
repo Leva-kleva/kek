@@ -1,13 +1,16 @@
-/*#ifndef V3D_H_INCLUDED
-#define V3D_H_INCLUDED
+#ifndef V3D_H
+#define V3D_H
+
 #include "vector.h"
+#include "abstractvector.h"
+
 class V3d: public Vector
 {
-    private:
+    protected:
         double _z;
     public:
-        V3d(): Vector() {set_z(0);}
-        V3d(double x, double y, double z): Vector(x, y) {set_z(z);}
+        V3d(): Vector() { set_z(0); }
+        V3d(double x, double y, double z): Vector(x, y) { set_z(z); }
         ~V3d() {}
 
         void set_z(double z);
@@ -16,5 +19,4 @@ class V3d: public Vector
         void show();
 };
 
-#endif // V3D_H_INCLUDED
-*/
+#endif // V3D_H

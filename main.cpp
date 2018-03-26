@@ -1,35 +1,53 @@
 #include <iostream>
-#include <cstdlib>
-#include <cmath>
-#include "vector.cpp"
+#include "v3d.h"
 #include "named.h"
-//#include "v3d.cpp"
-#include <fstream>
-//using namespace std;
+#include "vector.h"
+#include "list.h"
+#include "node.h"
+#include "abstractvector.h"
+using namespace std;
 
 int main()
 {
-    Vector a(0,2);
-    a.show();
-    //V3d a(0, 2, 3);
-    //cout<< a.get_z();
-    //задача "о хождение по плоскости"
-    /*ofstream fout("cord.txt");
-    Vector v(0, 0);
-    double step = 1;
-    int cnt = 0;
-    fout << 0 << " " << 0 << endl;
-    while (v.lenght() < 50)
-        {
-            double deg = ((double) rand() / RAND_MAX) * M_PI * 2;
-            Vector tmp(step*cos(deg), step*sin(deg));
-            v += tmp;
-            cnt += 1;
-            fout << v.get_x() << " " << v.get_y() << endl;
-        }
-    v.show();
-    cout << v.lenght() << endl;
-    cout << cnt;
-    fout.close();*/
+
+    AbstractVector *vector[4];
+
+    vector[0] = new Vector (0,1);
+    vector[1] = new Named ("qfe", 3, 4);
+    vector[2] = new V3d (1, 3, 4);
+    vector[3] = new Vector (12, 9);
+
+   // Node<AbstractVector> list = vector[0];
+   // List<AbstractVector> list(*vector[0]);
+   // cout << list.get_cnt();
+   // list.push(*vector[1]);
+   // cout << list.get_cnt();
+
+   /*Vector a(0,1), b(2, 3);
+    Node<Vector> one = Vector (0, 1);
+    Node<Vector> two = Vector (2, 3);
+    Node<Vector> three = Vector (3, 45);
+    one._link_next = &two;
+    two._link_next = &three;
+    three._link_next = &one;*/
+
+    //Node<Vector> liset = Vector();
+    //Node<Vector> list(Vector(0,1));
+    //list.cnt();
+
+    //Node<Vector> liset();
+    Vector a(1,1), b(2,3);
+    List<Vector> list(a);
+    list.cnt();
+    list.pull();
+
+    list.push(b);
+    list.cnt();
+    list.pull();
+
+    list.push(Vector(4,3));
+    list.cnt();
+    list.pull();
+
     return 0;
 }
