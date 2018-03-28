@@ -19,7 +19,6 @@ public:
     virtual double lenght() = 0;
     */
     virtual void show() = 0;
-
 };
 
 #endif // ABSTRACTVECTOR_H

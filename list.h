@@ -11,7 +11,9 @@ class List
 {
     public:
         Node<data_type>* _link_current;
+        Node<data_type>* _link_start;
         int _cnt;
+
         /*List()
         {
             Node<data_type> node = NULL;
@@ -23,9 +25,9 @@ class List
         List(data_type data)
         {
             Node<data_type> node(data);
-            //node._data = data;
-            node._link_next = &node;
+            _link_start = &node;
             _link_current = &node;
+           //_link_current->show();
             _cnt = 1;
         }
 
@@ -33,43 +35,38 @@ class List
 
         void push(data_type data)
         {
+            //_link_current->show();
             Node<data_type> node(data);
-            /*if (_link_start == NULL)
-            {
-                _link_start = &node;
-                _link_end = &node;
-            }
-            else
-            {
-                _link_end = &node;
-                //_link_end = &node;
-            }*/
+            _link_current->_link_next = &node;
+            //_link_current->show();
+            //_link_current->_link_next->show();
             _link_current = &node;
-             std::cout << &node << " ddf " << std::endl;
-             std::cout << "dtnhr ";
-             _link_current->show();
-            //node._link_next = NULL;
+            //_link_current->show();
             _cnt += 1;
         }
 
         void pull()
         {
-            std::cout << _link_current << std::endl;
             _link_current->show();
-            //Node<data_type> tmp = *_link_current;
-            //tmp.show();
-            //tmp._data.show();
         }
 
         void cnt()
         {
             std::cout << _cnt << std::endl;
-            //return _cnt;
         }
 
-        data_type operator [](int i)
+        void operator [](int k)
         {
-            cout << "keka";
+            Node<data_type>* _link_tmp;
+            _link_tmp = _link_start;
+            int i = 0;
+            for (i; i < k; i++)
+            {
+                std::cout << _link_tmp << std::endl;
+                _link_tmp = _link_tmp->_link_next;
+            }
+            std::cout << "elemet " << i << std::endl;
+            _link_tmp->show();
         }
 };
 
