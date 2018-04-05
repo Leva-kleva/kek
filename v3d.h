@@ -2,7 +2,6 @@
 #define V3D_H
 
 #include "vector.h"
-#include "abstractvector.h"
 
 class V3d: public Vector
 {

@@ -2,7 +2,6 @@
 #define NAMED_H
 
 #include "vector.h"
-#include "abstractvector.h"
 
 class Named: public Vector
 {
