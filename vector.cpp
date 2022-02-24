@@ -4,6 +4,7 @@
 
 using namespace std;
 
+
 Vector::Vector()
 {
     set_x(0);

@@ -4,6 +4,7 @@
 
 using namespace std;
 
+
 Named::~Named()
 {
     delete[] _name;

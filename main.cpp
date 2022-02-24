@@ -4,6 +4,7 @@
 #include "list.h"
 using namespace std;
 
+
 int main()
 {
     AbstractVector* aq = new Named ("kek", 0, 1);

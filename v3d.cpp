@@ -3,6 +3,7 @@
 
 using namespace std;
 
+
 void V3d::set_z(double z)
 {
     _z = z;

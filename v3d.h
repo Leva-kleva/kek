@@ -3,6 +3,7 @@
 
 #include "vector.h"
 
+
 class V3d: public Vector
 {
     protected:

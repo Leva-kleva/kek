@@ -3,6 +3,7 @@
 
 #include "abstractvector.h"
 
+
 class Vector: public AbstractVector
 {
     private:
